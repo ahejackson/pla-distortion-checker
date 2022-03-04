@@ -8,7 +8,6 @@ const resultsSection = document.querySelector(".pla-section-results");
 
 // options
 const mapSelect = document.getElementById("mapSelect");
-const rollsInput = document.getElementById("rolls");
 
 mapSelect.onchange = setMap;
 
@@ -32,7 +31,6 @@ const results = [];
 // Save and load user preferences
 function loadPreferences() {
   mapSelect.value = localStorage.getItem("mapSelect") ?? "obsidianfieldlands";
-  rollsInput.value = readIntFromStorage("rolls", 1);
   distAlphaCheckbox.checked = readBoolFromStorage(
     "distortionAlphaFilter",
     false
@@ -51,9 +49,6 @@ function loadPreferences() {
 function setupPreferenceSaving() {
   mapSelect.addEventListener("change", (e) =>
     localStorage.setItem("mapSelect", e.target.value)
-  );
-  rollsInput.addEventListener("change", (e) =>
-    saveIntToStorage("rolls", e.target.value)
   );
   distAlphaCheckbox.addEventListener("change", (e) =>
     saveBoolToStorage("distortionAlphaFilter", e.target.checked)
@@ -139,7 +134,6 @@ function filter(result, shinyOrAlphaFilter, shinyFilter, alphaFilter) {
 function getOptions() {
   return {
     map_name: mapSelect.value,
-    rolls: parseInt(rollsInput.value),
   };
 }
 
@@ -205,6 +199,21 @@ const showResults = ({ distortion_spawns }) => {
   showFilteredResults();
 };
 
+function getRollsText(rolls) {
+  switch (rolls) {
+    case 1:
+      return "Default";
+    case 2:
+      return "Dex Research 10";
+    case 4:
+      return "Dex Research Perfect";
+    case 5:
+      return "Shiny Charm";
+    case 7:
+      return "Shiny Charm + Perfect";
+  }
+}
+
 const showFilteredResults = () => {
   validateFilters();
 
@@ -247,6 +256,9 @@ const showFilteredResults = () => {
         result.nature;
       resultContainer.querySelector("[data-pla-results-gender]").innerText =
         result.gender;
+      resultContainer.querySelector("[data-pla-results-rolls]").innerText =
+        getRollsText(result.rolls);
+
       resultContainer.querySelector("[data-pla-results-seed]").innerText =
         result.generator_seed.toString(16);
       resultContainer.querySelector("[data-pla-results-ec]").innerText =

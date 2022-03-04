@@ -1,4 +1,31 @@
 {
-    "IP": "",
-    "USB": false
+  "IP": "",
+  "USB": false,
+  "pokedex": {
+    "shinycharm": false,
+    "research": {
+      "sneasel": 0,
+      "weavile": 0,
+      "porygon": 0,
+      "porygon2": 0,
+      "porygon-z": 0,
+      "cyndaquil": 0,
+      "quilava": 0,
+      "typhlosion": 0,
+      "magnemite": 0,
+      "magneton": 0,
+      "magnezone": 0,
+      "cranidos": 0,
+      "rampardos": 0,
+      "shieldon": 0,
+      "bastiodon": 0,
+      "rowlet": 0,
+      "dartrix": 0,
+      "decidueye": 0,
+      "scizor": 0,
+      "oshawott": 0,
+      "dewott": 0,
+      "samurott": 0
+    }
+  }
 }
