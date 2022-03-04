@@ -2,10 +2,10 @@ import json
 from .xoroshiro import XOROSHIRO
 
 distortion_offset = {
-    "obsidianfieldlands": 0x980,
-    "crimsonmirelands": 0xC78,
+    "obsidianfieldlands": 0x990,
+    "crimsonmirelands": 0xC70,
     "cobaltcoastlands": 0xCC0,
-    "coronethighlands": 0x828,
+    "coronethighlands": 0x818,
     "alabastericelands": 0x948
 }
 
@@ -20,7 +20,7 @@ distortion_locations = {
         (0,4): "Droning Meadow",
         (4,8): "Holm of Trials",
         (8,12): "Unknown",
-        (12,16): "Ursa's Landing",
+        (12,16): "Ursa's Ring",
         (16,20): "Prairie",
         (20,24): "Gapejaw Bog"
     },
@@ -49,8 +49,8 @@ distortion_locations = {
 }
 
 num_distortions = {
-    "obsidianfieldlands": 13,
-    "crimsonmirelands": 24,
+    "obsidianfieldlands": 16,
+    "crimsonmirelands": 25,
     "cobaltcoastlands": 20,
     "coronethighlands": 20,
     "alabastericelands": 24
