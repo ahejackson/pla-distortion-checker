@@ -1,3 +1,5 @@
+This repository is archived as its functionality has been integrated into [PLA Multi Checker](https://github.com/capitalism-sudo/pla-multi-checker)
+
 # PLA Distortion Checker
 
 Flask application that displays information about Space-Time Distortions
